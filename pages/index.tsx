@@ -16,7 +16,7 @@ export default function Home() {
         className="mt-6 p-2  bg-white text-black font-semibold rounded-lg hover:bg-red-500 hover:border-red-500 hover:text-white  hover:shadow-none transition duration-300"
         onClick={() => router.push('/repo')}
       >
-        Show Me a Repo
+        Show Me Some Repos!
       </button>
     </main>
   );
