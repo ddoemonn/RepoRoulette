@@ -110,7 +110,7 @@ interface SearchReposResponse {
   items: Repository[];
 }
 
-interface SearchReposParams {
+export interface SearchReposParams {
   q: string;
   sort?: 'stars' | 'forks' | 'help-wanted-issues' | 'updated';
   order?: 'desc' | 'asc';
@@ -118,14 +118,23 @@ interface SearchReposParams {
   page?: number;
 }
 
+const GITHUB_TOKEN = process.env.GITHUB_TOKEN;
+
 export const githubApi = createApi({
   reducerPath: 'githubApi',
   baseQuery: fetchBaseQuery({
     baseUrl: 'https://api.github.com',
+    prepareHeaders: headers => {
+      if (GITHUB_TOKEN) {
+        headers.set('Authorization', `Bearer ${GITHUB_TOKEN}`);
+      }
+
+      return headers;
+    },
   }),
   endpoints: builder => ({
-    searchRepos: builder.query<SearchReposParams, SearchReposParams>({
-      query: ({ q, sort = 'best match', order = 'desc', per_page = 30, page = 1 }) => ({
+    searchRepos: builder.query<SearchReposResponse, SearchReposParams>({
+      query: ({ q, sort = 'stars', order = 'desc', per_page = 30, page = 1 }) => ({
         url: '/search/repositories',
         params: {
           q,
