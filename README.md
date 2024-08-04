@@ -3,4 +3,6 @@ Welcome to Repo Roulette! This project aims to let users explore GitHub reposito
 
 ![WhatsApp Image 2024-08-04 at 00 43 51](https://github.com/user-attachments/assets/e56bbe24-34b9-49f6-903b-f2db74b10147)
 
+<a href="https://www.buymeacoffee.com/ozergklp" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/default-orange.png" alt="Buy Me A Coffee" height="41" width="174"></a>
+
 
