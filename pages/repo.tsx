@@ -1,6 +1,5 @@
 import { useCallback, useState } from 'react';
 
-import Image from 'next/image';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 
@@ -93,15 +92,6 @@ export default function App() {
               className="border-2 hover:border-red-500 border-white bg-white text-black flex flex-col mx-2 p-4 max-w-md my-4 rounded-lg shadow-lg"
             >
               <div className="flex items-center mb-2">
-                {repo.owner.avatar_url && (
-                  <Image
-                    src={repo.owner.avatar_url}
-                    alt={repo.owner.login}
-                    width={100}
-                    height={100}
-                    className="rounded-full object-cover"
-                  />
-                )}
                 <div className="ml-4 flex flex-col flex-grow">
                   <h1 className="text-2xl font-bold">{repo.name}</h1>
                   <p className="text-ellipsis line-clamp-3 mt-2 mb-2">{repo.description}</p>
